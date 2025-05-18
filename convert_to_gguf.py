@@ -4,7 +4,7 @@ import os, subprocess, sys
 
 model_dir = None # "model-dir" or "input"
 OUTFILE = "output/model_output.gguf"
-outtype = None; OUTTYPES = ['auto', 'f32', 'f16', 'bf16', 'q8_0', 'q4_0']
+outtype = None
 
 # using llama.cpp in current dir
 script = None ; SCRIPTS = ['llama.cpp/convert_hf_to_gguf.py', 'llama.cpp/examples/convert_legacy_llama.py']
@@ -26,8 +26,8 @@ if __name__ == '__main__':
         r = input("Choose a script: \n1. llama.cpp/convert_hf_to_gguf.py (default) \n2. llama.cpp/examples/convert_legacy_llama.py \n\n>")
         script = SCRIPTS[1] if r == '2' else SCRIPTS[0]
     if not outtype:
-        r = input("Choose outtype: \n0. auto \n1. f32 \n2. f16 \n3. bf16 \n4. q8_0 \n5. q4_0 \n\n>") or '0'
-        outtype = OUTTYPES[int(r)]
+        r = input("Choose outtype: \nDefault: auto\n\n>")
+        outtype = r.strip() or "auto"
     if not model_dir:
         model_dir = input("Set the model directory: \nMake sure it's in the current dir, skip if the model dir is named 'input' \n\n>") or 'input'
 
