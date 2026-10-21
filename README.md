@@ -1,14 +1,15 @@
 # Conversion Made Easy
+This is an efficient script for converting Pytorch/HF models to GGUF format.
+
 Start with setting up the directory.  
 <pre>git clone https://github.com/h4shy/convert-hf-to-gguf</pre>
 
-Then navigate to `convert-hf-to-gguf` and do:  
+Navigate to `convert-hf-to-gguf` and do:  
 <pre>git clone https://github.com/ggml-org/llama.cpp</pre>  
 <pre>python -m venv venv</pre>  
 <pre>./venv/Scripts/activate</pre>  
 <pre>pip install -r requirements.txt</pre>  
 
-Now move your model directory to `convert-hf-to-gguf`, or clone it.
+Place your model directory in `convert-hf-to-gguf`
 
-That's it, run the script and follow instructions, most of them are skippable if you don't care :skull::  
-<pre>python convert_to_gguf.py</pre>
+That's it! Run `convert_to_gguf.py` and select the desired parameters.
